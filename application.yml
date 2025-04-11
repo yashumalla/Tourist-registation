@@ -1,0 +1,15 @@
+server:
+  port: 8090
+  
+spring:
+  application:
+    name:  API_GATEWAY 
+    
+  cloud:
+    gateway:
+      routes:
+      - id: TOURIST-SERVICE
+        uri:
+          lb://TOURIST-SERVICE
+        predicates:
+        - Path=/tourist/**
